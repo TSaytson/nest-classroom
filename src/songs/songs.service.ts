@@ -17,8 +17,6 @@ export class SongsService {
   }
 
   async findByArtist(artist: string){
-    const artistFound = await this.songsRepository.findBy({artist})
-    console.log(artistFound)
     return this.songsRepository.findBy({artist})
   }
 

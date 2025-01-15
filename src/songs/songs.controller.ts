@@ -13,12 +13,12 @@ export class SongsController {
   }
   
   @Get('/artist/:artist')
-  findByArtist(@Param('artist') artist: string){
+  findByArtist(@Param('artist') artist: string): Promise<Song[]>{
     return this.songsService.findByArtist(artist.slice(1));
   }
 
   @Get('/title/:title')
-  findByTitle(@Param('title') title: string){
+  findByTitle(@Param('title') title: string): Promise<Song[]>{
     return this.songsService.findByTitle(title.slice(1));
   }
 
